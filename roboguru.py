@@ -34,7 +34,7 @@ def cari(soal: str, mapel: str, kodse_kelas: str):
 
     for list_quest in a["data"]["questions"]:
         if len(list_quest["options"]) == 0:
-            display = Display(visible=0, size(800,600))
+            display = Display(visible=0, size(
             display.start()
             imgkit.from_string('<p><b>Soal :</b></p>{}<p><b>Jawaban :</b></p>{}'.format(list_quest["contents"], list_quest['contentDefinition']), 'jawaban/{}.jpg'.format(list_quest['serial']))
             datajawaban.append('jawaban/{}.jpg'.format(list_quest['serial']))
@@ -44,7 +44,7 @@ def cari(soal: str, mapel: str, kodse_kelas: str):
             for all_answer in list_quest["options"]:
                 dumpopt += all_answer.replace("<p>", listAlphabet(abjad)+'. ').replace("<p style=\"text-align: justify;\">", listAlphabet(abjad)+'. ').replace("</p>", "<br>")
                 abjad += 1
-            display = Display(visible=0, size(800,600))
+            display = Display(visible=0)
             display.start()
             imgkit.from_string('<p><b>Soal :</b></p>{}{}<p><b>Jawaban :</b></p>{}'.format(list_quest["contents"],dumpopt, list_quest['contentDefinition']), 'jawaban/{}.jpg'.format(list_quest['serial']))
             datajawaban.append('jawaban/{}.jpg'.format(list_quest['serial']))
