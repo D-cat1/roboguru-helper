@@ -1,0 +1,6 @@
+imgkit
+html2text
+requests
+pyrogram
+pytesseract
+imgkit
