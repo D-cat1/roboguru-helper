@@ -35,7 +35,7 @@ RUN apk --no-cache add ca-certificates wget  && \
         apk add glibc-2.29-r0.apk
 
 RUN cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-RUN git clone git@github.com:D-cat1/roboguru-helper.git /root/helper
+RUN git clone https://github.com/D-cat1/roboguru-helper.git /root/helper
 WORKDIR /root/helper/
 
 ENV TZ=Asia/Jakarta
