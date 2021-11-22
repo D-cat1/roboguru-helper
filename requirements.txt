@@ -3,5 +3,5 @@ html2text
 requests
 pyrogram
 pytesseract
-imgkit
+Pillow 
 tgcrypto
