@@ -11,7 +11,7 @@ ENV LC_ALL en_US.UTF-8
 
 # Install Dependencies
 RUN apt-get update \
-&& apt-get install -y python3 python3-pip tesseract-ocr tesseract-ocr-eng zlib1g libjpeg-dev
+&& apt-get install -y python3 python3-pip tesseract-ocr tesseract-ocr-eng libjpeg8-dev zlib1g-dev
 
 
 #
@@ -22,7 +22,7 @@ WORKDIR /root/helper/
 
 ENV TZ=Asia/Jakarta
 
-RUN pip3 install Pillow
+RUN pip3 install --ignore-installed pillow
 RUN pip3 install -r requirements.txt
 
 CMD ["python3", "bot.py"]
