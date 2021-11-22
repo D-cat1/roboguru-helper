@@ -1,6 +1,3 @@
-FROM alpine:latest
-FROM inetsoftware/alpine-tesseract:latest
-
 FROM heroku/heroku:18
 
 
