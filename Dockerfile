@@ -27,7 +27,7 @@ RUN apk add --update --no-cache \
     libwebp \
     speedtest-cli \
     tesseract-ocr \
-    tesseract-ocr-data-eng \
+    tesseract-ocr-data-en \
     figlet
     
 RUN apk --no-cache add ca-certificates wget  && \
