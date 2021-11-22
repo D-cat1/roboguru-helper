@@ -11,7 +11,7 @@ ENV LC_ALL en_US.UTF-8
 
 # Install Dependencies
 RUN apt-get update \
-&& apt-get install -y python3 python3-pip tesseract-ocr tesseract-ocr-eng zlib libjpeg-dev libtiff-dev libfreetype-dev libwebp-dev libraqm-dev
+&& apt-get install -y python3 python3-pip tesseract-ocr tesseract-ocr-eng zlib1g libjpeg-dev libfreetype-dev libwebp-dev libraqm-dev
 
 
 #
