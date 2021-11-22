@@ -7,6 +7,9 @@ from roboguru import cari
 from time import sleep
 import os
 import imgkit
+from pyvirtualdisplay import Display
+display = Display(visible=0, size(800,600))
+display.start()
 
 client_robo = Client("hiyahiya",bot_token='1998370175:AAGBRDmRSGhHwlCSI95u_nZfx-_lHXoYZvk', api_id=1428215, api_hash='e7cc39008d3f5f1ee045f6b323c16786')
 
