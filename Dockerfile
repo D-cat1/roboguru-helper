@@ -1,4 +1,6 @@
 FROM alpine:latest
+FROM inetsoftware/alpine-tesseract:latest
+
 
 RUN apk add --update --no-cache \
     npm \
