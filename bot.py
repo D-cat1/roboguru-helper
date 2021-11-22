@@ -51,7 +51,7 @@ def cuaks(client, pesan):
             client_robo.send_message(pesan.chat.id, "**Silahkan ketik pertanyaan atau foto pertanyaan lalu reply foto dengan command /tanya**")
         else:
             nama_file = randomize()
-            display = Display(visible=0, size(800,600))
+            display = Display(visible=0)
             display.start()
             imgkit.from_string('<p>{}</p>'.format(pesan.text.split('/tanya ')[1]), 'downloads/{}.jpg'.format(nama_file))
             client_robo.send_message(pesan.chat.id, "Silahkan pilih jenjang dengan mengklik tombol dibawah", reply_markup=InlineKeyboardMarkup(jenjang(nama_file+'.jpg')))
