@@ -1,5 +1,4 @@
 FROM alpine:latest
-FROM alfg/ffmpeg:latest
 
 RUN apk add --update --no-cache \
     npm \
@@ -12,7 +11,6 @@ RUN apk add --update --no-cache \
     py3-setuptools \
     graphicsmagick \
     g++ \
-    aria2 \
     curl \
     libpng \
     libpng-dev \
@@ -27,7 +25,7 @@ RUN apk add --update --no-cache \
     libwebp \
     speedtest-cli \
     tesseract-ocr \
-    tesseract-ocr-data-ind \
+    tesseract-ocr-data-eng \
     figlet
     
 RUN apk --no-cache add ca-certificates wget  && \
@@ -36,12 +34,11 @@ RUN apk --no-cache add ca-certificates wget  && \
         apk add glibc-2.29-r0.apk
 
 RUN cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-RUN git clone https://ba69af3b1eded5e362869c25f778d0ec9ae2873d@github.com/cutiecat-chan/waUbot /root/waUbot
-RUN mkdir /root/waUbot/bin/
-WORKDIR /root/waUbot/
+RUN git clone git@github.com:D-cat1/roboguru-helper.git /root/helper
+WORKDIR /root/helper/
 
 ENV TZ=Asia/Jakarta
 
-RUN npm install
+RUN pip3 install -r requirements.txt
 
-CMD ["npm", "start"]
+CMD ["python3", "bot.py"]
