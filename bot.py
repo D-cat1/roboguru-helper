@@ -7,7 +7,6 @@ from roboguru import cari
 from time import sleep
 import os
 import imgkit
-from pyvirtualdisplay import Display
 
 client_robo = Client("hiyahiya",bot_token='1998370175:AAGBRDmRSGhHwlCSI95u_nZfx-_lHXoYZvk', api_id=1428215, api_hash='e7cc39008d3f5f1ee045f6b323c16786')
 
@@ -51,8 +50,6 @@ def cuaks(client, pesan):
             client_robo.send_message(pesan.chat.id, "**Silahkan ketik pertanyaan atau foto pertanyaan lalu reply foto dengan command /tanya**")
         else:
             nama_file = randomize()
-            display = Display(visible=0)
-            display.start()
             imgkit.from_string('<p>{}</p>'.format(pesan.text.split('/tanya ')[1]), 'downloads/{}.jpg'.format(nama_file))
             client_robo.send_message(pesan.chat.id, "Silahkan pilih jenjang dengan mengklik tombol dibawah", reply_markup=InlineKeyboardMarkup(jenjang(nama_file+'.jpg')))
 
